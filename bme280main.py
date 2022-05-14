@@ -7,15 +7,12 @@
 # Want to do
 # Improve readability, improve robustness
 import time
-import board
-import busio
-from adafruit_bme280 import basic as adafruit_bme280
-from datetime import datetime
-
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 
-i2c = board.I2C()   # uses board.SCL and board.SDA
+import board
+from adafruit_bme280 import basic as adafruit_bme280
+i2c = board.I2C()  # uses board.SCL and board.SDA
 bme280 = adafruit_bme280.Adafruit_BME280_I2C(i2c)
 
 sensor_host_name = "RaspiTest"
